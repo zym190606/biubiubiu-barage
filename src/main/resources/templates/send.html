@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.springframework.org/schema/jdbc">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script th:src="@{/jquery-3.3.1.min.js}"></script>
+</head>
+<body>
+
+
+<input id="screenBulletText" type="text" placeholder="请输入弹幕内容"/>
+<button class="send">发射</button>
+<script type="text/javascript">
+    $(".send").on("click", function () {
+        console.log("???");
+        param = $("#screenBulletText").val();
+        barrageColor='E67E22';
+        // while(true){
+            $.ajax({url:"/sendBarrage?text=" + param+"&color="+barrageColor ,async: false});
+        // }
+    });
+</script>
+</body>
+</html>
